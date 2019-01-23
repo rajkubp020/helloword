@@ -141,7 +141,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{cool\_NABS\_relax}
+    \title{lmps.log}
     
     
     
@@ -281,98 +281,276 @@
 
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{o}{!}\PY{n+nb}{echo} \PY{l+s+s2}{\PYZdq{}hello python\PYZdq{}}
-         
-         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-         \PY{k+kn}{import} \PY{n+nn}{matplotlib} 
-         \PY{n}{plt}\PY{o}{.}\PY{n}{rc}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{font}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{family}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{CMU Serif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{p}{)}
-         
-         \PY{n}{matplotlib}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{text.latex.preamble}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{boldmath}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-         
-         
-         \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{names} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{n}{df} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-         \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{)}\PY{p}{:}
-             \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
-             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{:}
-         
-                 \PY{c+c1}{\PYZsh{}print(i)}
-                 \PY{n}{foldername} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{/Users/rajesh/work/simulations/cool\PYZus{}NABS\PYZus{}relax/cool}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{j}\PY{p}{)}\PY{o}{+}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)}
-                 \PY{n}{filename} \PY{o}{=} \PY{n}{foldername} \PY{o}{+}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{/log.lammps}\PY{l+s+s1}{\PYZsq{}}
-                 \PY{c+c1}{\PYZsh{}print(filename)}
-                 \PY{n}{a} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{119}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{120}\PY{p}{,} \PY{l+m+mi}{1000}\PY{p}{]}  
-         
-                 \PY{n}{names}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{genfromtxt}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{n}{skip\PYZus{}header}\PY{o}{=}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{max\PYZus{}rows}\PY{o}{=}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{n+nb}{str}\PY{p}{)}\PY{p}{)}   
-                 \PY{c+c1}{\PYZsh{}print(names)}
-                 \PY{n}{data}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{genfromtxt}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{n}{skip\PYZus{}header}\PY{o}{=}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{max\PYZus{}rows}\PY{o}{=}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}\PY{p}{)}   
-                 \PY{c+c1}{\PYZsh{}print(data)}
-                 \PY{n}{df}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{columns}\PY{o}{=}\PY{n}{names}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-         
-                 \PY{c+c1}{\PYZsh{}df.append(pd.DataFrame(data[i],columns=names[i]))}
-                 \PY{c+c1}{\PYZsh{}df[i\PYZhy{}1][\PYZsq{}Density\PYZus{}moving\PYZus{}avg\PYZsq{}] = df[i\PYZhy{}1][\PYZsq{}Density\PYZsq{}].rolling(window=200).mean()}
-                 \PY{c+c1}{\PYZsh{}df[i].to\PYZus{}csv(foldername+\PYZsq{}data.csv\PYZsq{})}
-                 \PY{n}{a}\PY{o}{=}\PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{]}
-         
-                 \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Step}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{df}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Density}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{o}{+}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{j}\PY{p}{)}\PY{p}{)}
-                 \PY{n}{ax}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{sys}
+        \PY{n}{sys}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{/Users/rajesh/work/github/python\PYZus{}packages}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-hello python
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib} 
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{rc}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{font}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{family}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{CMU Serif}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{p}{)}
+        
+        \PY{n}{matplotlib}\PY{o}{.}\PY{n}{rcParams}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{text.latex.preamble}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{boldmath}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        
+        
+        \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+        \PY{n}{ttl}\PY{o}{=}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al2.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al7.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al10}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al12.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al15}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al17.5}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{al20}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        
+        \PY{n}{x} \PY{o}{=} \PY{p}{[}\PY{n+nb}{float}\PY{p}{(}\PY{n}{i}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{:}\PY{p}{]}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{ttl}\PY{p}{]}
+        \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+        
+        \PY{n}{table} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+        \PY{n}{markers} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{o}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{*}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n}{color} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{g}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        
+        
+        
+        \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
+            \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+            \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{)}\PY{p}{:}
+                
+                \PY{n}{foldername} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{/Users/rajesh/work/simulations/full\PYZus{}NABS/full}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{j}\PY{p}{)}\PY{o}{+}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZus{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                \PY{n}{filename} \PY{o}{=} \PY{n}{foldername} \PY{o}{+}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{/log.lammps}\PY{l+s+s1}{\PYZsq{}}
+                
+                \PY{c+c1}{\PYZsh{}print(filename)}
+                
+                \PY{n}{f}\PY{o}{=}\PY{n+nb}{open}\PY{p}{(}\PY{n}{filename}\PY{p}{)}
+                \PY{n}{lines}\PY{o}{=}\PY{n}{f}\PY{o}{.}\PY{n}{readlines}\PY{p}{(}\PY{p}{)}
+                
+                \PY{k}{if} \PY{p}{(}\PY{n}{lines}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{==}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Total}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+                    \PY{n}{data}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n+nb}{float}\PY{p}{(}\PY{n}{lines}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{64}\PY{p}{]}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+                \PY{k}{else}\PY{p}{:}
+                    \PY{n+nb}{print}\PY{p}{(}\PY{n}{filename}\PY{p}{)}
+                    \PY{n}{data}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{k+kc}{None}\PY{p}{)}
+            \PY{n}{data} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{data}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}
+            \PY{n}{table}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+            \PY{n}{mask} \PY{o}{=} \PY{o}{\PYZti{}}\PY{n}{np}\PY{o}{.}\PY{n}{isnan}\PY{p}{(}\PY{n}{data}\PY{p}{)}
+            \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{[}\PY{n}{mask}\PY{p}{]}\PY{p}{,}\PY{n}{data}\PY{p}{[}\PY{n}{mask}\PY{p}{]}\PY{p}{,}\PY{n}{markers}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{+}\PY{n}{color}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{+}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}    
+        
+        \PY{n}{ax}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+        \PY{n}{fig}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density\PYZus{}vs\PYZus{}full.eps}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n+nb}{format}\PY{o}{=}\PY{k+kc}{None}\PY{p}{,}\PY{n}{dpi}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{,}\PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{tight}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}        
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+/Users/rajesh/work/simulations/full\_NABS/full3\_3/log.lammps
+/Users/rajesh/work/simulations/full\_NABS/full4\_3/log.lammps
+/Users/rajesh/work/simulations/full\_NABS/full8\_3/log.lammps
+/Users/rajesh/work/simulations/full\_NABS/full10\_3/log.lammps
 
     \end{Verbatim}
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{table}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+        \PY{n}{np}\PY{o}{.}\PY{n}{savetxt}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{density\PYZus{}full.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{table}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}59}]:} \PY{k+kn}{import} \PY{n+nn}{lmps}\PY{n+nn}{.}\PY{n+nn}{log} \PY{k}{as} \PY{n+nn}{log}
+         \PY{n}{tables} \PY{o}{=} \PY{n}{log}\PY{o}{.}\PY{n}{reader}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log.lammps}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{type}\PY{p}{(}\PY{n}{tables}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{tables}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}help(tables.keys())}
+         \PY{n}{tables}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{label}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+dict\_keys(['df', 'label'])
+
+    \end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}59}]:} ['Active Fix:\textbackslash{}nall npt temp 4000 4000 100 iso 0 0 100\textbackslash{}nall dt/reset 2 0.1 1.0 0.1 units box',
+          'Active Fix:\textbackslash{}nall dt/reset 2 0.1 1.0 0.1 units box\textbackslash{}nall nve',
+          'Active Fix:\textbackslash{}nall npt temp 4000 300 100 iso 0 0 1000',
+          'Active Fix:\textbackslash{}nall npt temp 300 300 100 iso 0 0 1000',
+          'Active Fix:\textbackslash{}nall nve']
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}51}]:} \PY{n}{df} \PY{o}{=} \PY{n}{tables}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{df}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{labels} \PY{o}{=} \PY{n}{tables}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{label}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}42}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n+nb}{len}\PY{p}{(}\PY{n}{df}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Temp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{df}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Density}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{label} \PY{o}{=} \PY{n}{labels}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{p}{[}\PY{l+m+mf}{1.1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}    
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}42}]:} <matplotlib.legend.Legend at 0x11cb13160>
+\end{Verbatim}
+            
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_1.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_5_1.png}
     \end{center}
     { \hspace*{\fill} \\}
     
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}72}]:} \PY{k+kn}{import} \PY{n+nn}{lmps}\PY{n+nn}{.}\PY{n+nn}{log} \PY{k}{as} \PY{n+nn}{log}
+         \PY{n}{tables} \PY{o}{=} \PY{n}{log}\PY{o}{.}\PY{n}{reader}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log.lammps}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}type(tables)}
+         \PY{c+c1}{\PYZsh{}print(tables.keys())}
+         \PY{c+c1}{\PYZsh{}help(tables.keys())}
+         \PY{n}{tables}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}
+         \PY{n}{tables}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{df}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}72}]:}         Step       Time     TotEng       Temp        Press   Density  \textbackslash{}
+         0   860000.0  859970.75 -1596456.5  302.10702   -26.190335  2.860125   
+         1   861000.0  860970.75 -1595894.4  300.59516  1300.100000  2.863837   
+         2   862000.0  861970.75 -1596591.1  300.05362  -105.507320  2.860930   
+         3   863000.0  862970.75 -1596549.1  299.71014  1152.240900  2.863367   
+         4   864000.0  863970.75 -1596412.3  297.79748  -147.892830  2.857572   
+         5   865000.0  864970.75 -1596847.0  302.49659  -940.927240  2.856209   
+         6   866000.0  865970.75 -1596836.4  296.47557  -219.202810  2.856143   
+         7   867000.0  866970.75 -1597035.2  300.04501 -1193.990100  2.847076   
+         8   868000.0  867970.75 -1596938.1  298.45341 -1727.503000  2.856296   
+         9   869000.0  868970.75 -1596395.0  298.42731  1379.555100  2.862218   
+         10  870000.0  869970.75 -1596534.6  299.54875   913.549710  2.857782   
+         11  871000.0  870970.75 -1596324.2  302.38520   109.431790  2.856824   
+         12  872000.0  871970.75 -1596269.4  298.33197  1324.869400  2.861652   
+         13  873000.0  872970.75 -1596814.2  299.33396   979.341090  2.857517   
+         14  874000.0  873970.75 -1596687.5  303.95326  1018.066000  2.855869   
+         15  875000.0  874970.75 -1596510.2  303.74486  -292.421400  2.854294   
+         16  876000.0  875970.75 -1596527.1  296.97343  -563.514070  2.853530   
+         17  877000.0  876970.75 -1596616.6  298.05877    87.725574  2.856343   
+         18  878000.0  877970.75 -1596114.6  303.00046   437.404470  2.857983   
+         19  879000.0  878970.75 -1596657.6  297.51924    85.188323  2.856249   
+         20  880000.0  879970.75 -1596755.7  300.77656 -1719.889900  2.849913   
+         21  881000.0  880970.75 -1596643.6  294.39216   376.593160  2.856500   
+         22  882000.0  881970.75 -1596597.9  300.11880    31.192657  2.857880   
+         23  883000.0  882970.75 -1596566.0  295.63118  -794.685480  2.853678   
+         24  884000.0  883970.75 -1596603.6  297.84905  -745.394110  2.859119   
+         25  885000.0  884970.75 -1596431.1  300.48286   620.085130  2.856761   
+         26  886000.0  885970.75 -1597233.6  296.44301   -41.329610  2.853948   
+         27  887000.0  886970.75 -1596651.0  301.00170    39.714254  2.852771   
+         28  888000.0  887970.75 -1596378.9  297.71667 -1529.060100  2.854030   
+         29  889000.0  888970.75 -1596467.4  300.69016   -27.098219  2.857356   
+         ..       {\ldots}        {\ldots}        {\ldots}        {\ldots}          {\ldots}       {\ldots}   
+         31  891000.0  890970.75 -1596438.1  301.83163  -399.295560  2.856325   
+         32  892000.0  891970.75 -1596717.9  299.06448  -315.508520  2.855071   
+         33  893000.0  892970.75 -1596019.5  305.36229   131.495410  2.856490   
+         34  894000.0  893970.75 -1596382.9  301.04779   -58.896016  2.856843   
+         35  895000.0  894970.75 -1596731.4  303.53257 -2677.810200  2.849785   
+         36  896000.0  895970.75 -1596617.6  299.71793   -94.139763  2.855186   
+         37  897000.0  896970.75 -1596743.8  298.26430  -236.620530  2.855591   
+         38  898000.0  897970.75 -1597042.7  295.42497   138.975360  2.854655   
+         39  899000.0  898970.75 -1596790.8  305.30083   731.621490  2.858446   
+         40  900000.0  899970.75 -1596373.1  300.15847  -269.274450  2.858027   
+         41  901000.0  900970.75 -1596843.9  297.97837   -79.506823  2.856103   
+         42  902000.0  901970.75 -1596475.8  300.18876   -95.803977  2.858108   
+         43  903000.0  902970.75 -1596167.8  293.55908  1480.915900  2.860524   
+         44  904000.0  903970.75 -1596512.5  294.79341   207.480170  2.857277   
+         45  905000.0  904970.75 -1596476.1  300.79144 -1346.770400  2.850696   
+         46  906000.0  905970.75 -1596435.7  303.55924  -492.433590  2.857975   
+         47  907000.0  906970.75 -1596733.5  302.76553 -1758.627000  2.849517   
+         48  908000.0  907970.75 -1596602.3  297.56948 -1452.137400  2.857640   
+         49  909000.0  908970.75 -1596414.6  293.77738   339.272950  2.858108   
+         50  910000.0  909970.75 -1596540.5  303.02669   448.767310  2.855177   
+         51  911000.0  910970.75 -1596565.3  303.88301   411.168540  2.856368   
+         52  912000.0  911970.75 -1596833.3  294.64691 -1003.455700  2.855280   
+         53  913000.0  912970.75 -1596251.7  294.27806   856.841180  2.857056   
+         54  914000.0  913970.75 -1596568.8  304.01109    60.365754  2.858522   
+         55  915000.0  914970.75 -1596382.5  297.56101  -267.456010  2.855399   
+         56  916000.0  915970.75 -1596382.2  293.66784   961.484480  2.861203   
+         57  917000.0  916970.75 -1596390.7  296.18197  -392.958660  2.858114   
+         58  918000.0  917970.75 -1596248.3  298.59748   -92.544736  2.861880   
+         59  919000.0  918970.75 -1596719.9  302.84710  -331.627120  2.854021   
+         60  920000.0  919970.75 -1596416.6  302.78948   562.577790  2.860526   
+         
+                Volume  c\_P       c\_O      c\_OO  
+         0   71699.391  4.0  1.311182  1.311182  
+         1   71606.453  4.0  1.311182  1.311182  
+         2   71679.227  4.0  1.310863  1.310863  
+         3   71618.200  4.0  1.311182  1.311182  
+         4   71763.435  4.0  1.311182  1.311182  
+         5   71797.688  4.0  1.311182  1.311182  
+         6   71799.350  4.0  1.311182  1.311182  
+         7   72028.001  4.0  1.311182  1.311182  
+         8   71795.511  4.0  1.311182  1.311182  
+         9   71646.961  4.0  1.311182  1.311182  
+         10  71758.176  4.0  1.311182  1.311182  
+         11  71782.243  4.0  1.311182  1.311182  
+         12  71661.124  4.0  1.311182  1.311182  
+         13  71764.834  4.0  1.311182  1.311182  
+         14  71806.228  4.0  1.311182  1.311182  
+         15  71845.870  4.0  1.311182  1.311182  
+         16  71865.099  4.0  1.311182  1.311182  
+         17  71794.332  4.0  1.310863  1.310863  
+         18  71753.125  4.0  1.311182  1.311182  
+         19  71796.691  4.0  1.311182  1.311182  
+         20  71956.298  4.0  1.311182  1.311182  
+         21  71790.372  4.0  1.311182  1.311182  
+         22  71755.714  4.0  1.311182  1.311182  
+         23  71861.361  4.0  1.311182  1.311182  
+         24  71724.618  4.0  1.311182  1.311182  
+         25  71783.818  4.0  1.311182  1.311182  
+         26  71854.576  4.0  1.311182  1.311182  
+         27  71884.227  4.0  1.311182  1.311182  
+         28  71852.511  4.0  1.311182  1.311182  
+         29  71768.873  4.0  1.311182  1.311182  
+         ..        {\ldots}  {\ldots}       {\ldots}       {\ldots}  
+         31  71794.778  4.0  1.310863  1.310863  
+         32  71826.320  4.0  1.311182  1.311182  
+         33  71790.625  4.0  1.311182  1.311182  
+         34  71781.750  4.0  1.311182  1.311182  
+         35  71959.547  4.0  1.311182  1.311182  
+         36  71823.431  4.0  1.310543  1.310543  
+         37  71813.241  4.0  1.311182  1.311182  
+         38  71836.787  4.0  1.311182  1.311182  
+         39  71741.506  4.0  1.311182  1.311182  
+         40  71752.031  4.0  1.310863  1.310863  
+         41  71800.360  4.0  1.311182  1.311182  
+         42  71749.984  4.0  1.311182  1.311182  
+         43  71689.395  4.0  1.310543  1.310543  
+         44  71770.861  4.0  1.311182  1.311182  
+         45  71936.544  4.0  1.311182  1.311182  
+         46  71753.329  4.0  1.311182  1.311182  
+         47  71966.321  4.0  1.311182  1.311182  
+         48  71761.737  4.0  1.311182  1.311182  
+         49  71749.998  4.0  1.310863  1.310863  
+         50  71823.643  4.0  1.311182  1.311182  
+         51  71793.699  4.0  1.311182  1.311182  
+         52  71821.061  4.0  1.311182  1.311182  
+         53  71776.408  4.0  1.311182  1.311182  
+         54  71739.589  4.0  1.311182  1.311182  
+         55  71818.071  4.0  1.311182  1.311182  
+         56  71672.376  4.0  1.311182  1.311182  
+         57  71749.827  4.0  1.310863  1.310863  
+         58  71655.409  4.0  1.311182  1.311182  
+         59  71852.731  4.0  1.311182  1.311182  
+         60  71689.342  4.0  1.311182  1.311182  
+         
+         [61 rows x 10 columns]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}82}]:} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{1}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{rc}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{font}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{family}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{arial}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{df}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Time}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{df}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Temp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{label} \PY{o}{=} \PY{n}{labels}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}82}]:} <matplotlib.legend.Legend at 0x11dd60a58>
+\end{Verbatim}
+            
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_2.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_3.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_4.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_5.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_6.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_7.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_8.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_9.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_0_10.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_1.png}
     \end{center}
     { \hspace*{\fill} \\}
     
